@@ -103,6 +103,21 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                                 </dd>
                                                             </div>
                                                         )}
+                                                        {!data.isGroup && (
+                                                            <>
+                                                                <hr />
+                                                                <div>
+                                                                    <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
+                                                                        Joined
+                                                                    </dt>
+                                                                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
+                                                                        <time dateTime={joinedDate}>
+                                                                            {joinedDate}
+                                                                        </time>
+                                                                    </dd>
+                                                                </div>
+                                                            </>
+                                                        )}
                                                     </dl>
                                                 </div>
                                             </div>
