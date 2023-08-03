@@ -47,6 +47,12 @@ const ConversationList: React.FC<ConversationListProps> = ({ initialItems }) => 
                         <MdOutlineGroupAdd size={20} />
                     </div>
                 </div>
+                {items.map((item) => (
+                    <ConversationBox
+                        key={item.id}
+                        data={item}
+                    />
+                ))}
             </div>
         </aside>
     );
