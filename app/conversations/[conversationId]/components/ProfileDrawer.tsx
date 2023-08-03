@@ -5,6 +5,7 @@ import { Conversation, User } from "@prisma/client"
 import format from "date-fns/format"
 import { useMemo, Fragment } from "react"
 import { Transition, Dialog } from "@headlessui/react"
+import { IoClose } from "react-icons/io5"
 
 
 interface ProfileDrawerProps {
@@ -51,7 +52,22 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                 <div className="fixed inset-0 overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden">
                         <div className="fixed inset-y-0 right-0 flex max-w-full pl-10 pointer-events-none">
-
+                            <Transition.Child as={Fragment} enter="transform transition ease-in-out duration-500" enterFrom="translate-x-full" enterTo="translate-x-0" leave="transform transition ease-in-out duration-500" leaveFrom="opacity-100" leaveTo="translate-x-full">
+                                <Dialog.Panel className="w-screen max-w-md pointer-events-auto">
+                                    <div className="flex flex-col h-full py-6 overflow-y-scroll bg-white shadow-xl">
+                                        <div className="px-4 sm:px-6">
+                                            <div className="flex items-start justify-end">
+                                                <div className="flex items-center ml-3 h-7">
+                                                    <button type="button" className="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                                                        <span className="sr-only">Close panel</span>
+                                                        <IoClose size={24} />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Dialog.Panel>
+                            </Transition.Child>
                         </div>
                     </div>
                 </div>
