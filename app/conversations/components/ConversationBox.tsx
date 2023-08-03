@@ -35,6 +35,23 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
     const userEmail = useMemo(() => session.data?.user?.email,
         [session.data?.user?.email]);
 
+    const hasSeen = useMemo(() => {
+        // Check if there is an existing last message
+        if (!lastMessage) {
+            return false;
+        }
+
+        // Structure seen array
+        const seenArray = lastMessage.seen || [];
+
+        if (!userEmail) {
+            return false;
+        }
+
+        return seenArray
+            .filter((user) => user.email === userEmail).length !== 0;
+    }, [userEmail, lastMessage]);
+
     return (
         <div>
             ConversationBox
