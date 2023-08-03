@@ -11,7 +11,7 @@ import {
     useForm
 } from "react-hook-form";
 import axios from "axios";
-// import { CldUploadButton } from "next-cloudinary";
+import { CldUploadButton } from "next-cloudinary";
 import useConversation from "@/hooks/useConversation";
 
 const Form = () => {
@@ -49,13 +49,13 @@ const Form = () => {
         <div
             className="flex items-center w-full gap-2 px-4 py-4 bg-white border-t lg:gap-4"
         >
-            {/* <CldUploadButton
+            <CldUploadButton
                 options={{ maxFiles: 1 }}
                 onUpload={handleUpload}
-                uploadPreset="pgc9ehd5"
-            > */}
-            <HiPhoto size={30} className="text-sky-500" />
-            {/* </CldUploadButton> */}
+                uploadPreset="tnqglwo1"
+            >
+                <HiPhoto size={30} className="text-sky-500" />
+            </CldUploadButton>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex items-center w-full gap-2 lg:gap-4"
