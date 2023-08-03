@@ -1,3 +1,7 @@
+interface IParams {
+    conversationId: string;
+}
+
 const ConversationId = () => {
     return (
         <div>
