@@ -5,7 +5,7 @@ import { Conversation, User } from "@prisma/client"
 import format from "date-fns/format"
 import { useMemo, Fragment } from "react"
 import { Transition, Dialog } from "@headlessui/react"
-import { IoClose } from "react-icons/io5"
+import { IoClose, IoTrash } from "react-icons/io5"
 
 import Avatar from "@/components/Avatar"
 
@@ -74,6 +74,19 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                 </div>
                                                 <div>
                                                     {title}
+                                                </div>
+                                                <div className="text-sm text-gray-500">
+                                                    {statusText}
+                                                </div>
+                                                <div className="flex gap-10 my-8">
+                                                    <div
+                                                        onClick={() => { }}
+                                                        className="flex flex-col items-center gap-3 cursor-pointer hover:opacity-75"
+                                                    >
+                                                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-100">
+                                                            <IoTrash size={20} />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
