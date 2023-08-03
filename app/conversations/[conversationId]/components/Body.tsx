@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 // import { pusherClient } from "@/libs/pusher";
 import useConversation from "@/hooks/useConversation";
-// import MessageBox from "./MessageBox";
+import MessageBox from "./MessageBox";
 import { FullMessageType } from "@/types";
 // import { find } from "lodash";
 
@@ -64,14 +64,13 @@ const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
 
     return (
         <div className="flex-1 overflow-y-auto">
-            {/* {messages.map((message, i) => (
+            {messages.map((message, i) => (
                 <MessageBox
                     isLast={i === messages.length - 1}
                     key={message.id}
                     data={message}
                 />
-            ))} */}
-            Message Box Here
+            ))}
             <div className="pt-24" ref={bottomRef} />
         </div>
     );
