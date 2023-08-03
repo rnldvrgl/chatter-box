@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import clsx from "clsx";
 import Avatar from "@/components/Avatar";
 import { format } from "date-fns";
+import Image from "next/image";
 
 interface MessageBoxProps {
     data: FullMessageType,
@@ -40,6 +41,19 @@ const MessageBox: React.FC<MessageBoxProps> = ({
                     <div className="text-xs text-gray-400">
                         {format(new Date(data.createdAt), 'p')}
                     </div>
+                </div>
+                <div className={message}>
+                    {data.image ? (
+                        <Image
+                            alt="Image"
+                            height={288}
+                            width={288}
+                            src={data.image}
+                            className="object-cover transition cursor-pointer hover:scale-110 translate"
+                        />
+                    ) : (
+                        <div>{data.body}</div>
+                    )}
                 </div>
             </div>
         </div>
