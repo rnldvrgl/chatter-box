@@ -52,6 +52,19 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
             .filter((user) => user.email === userEmail).length !== 0;
     }, [userEmail, lastMessage]);
 
+
+    const lastMessageText = useMemo(() => {
+        if (lastMessage?.image) {
+            return 'Sent an image';
+        }
+
+        if (lastMessage?.body) {
+            return lastMessage?.body;
+        }
+
+        return 'Started a conversation';
+    }, [lastMessage]);
+
     return (
         <div>
             ConversationBox
