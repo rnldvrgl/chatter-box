@@ -8,6 +8,8 @@ import { useSession } from "next-auth/react";
 import clsx from "clsx";
 import { FullConversationType } from "@/types";
 import useOtherUser from "@/hooks/useOtherUser";
+import AvatarGroup from "@/components/AvatarGroup";
+import Avatar from "@/components/Avatar";
 
 interface ConversationBoxProps {
     data: FullConversationType,
@@ -66,8 +68,56 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
     }, [lastMessage]);
 
     return (
-        <div>
-            ConversationBox
+        <div
+            onClick={handleClick}
+            className={clsx(`
+                w-full
+                relative
+                flex
+                items-center
+                space-x-3
+                p-3
+                hover:bg-neutral-100
+                rounded-lg
+                transition
+                cursor-pointer
+                `,
+                selected ? 'bg-neutral-100' : 'bg-white'
+            )}
+        >
+            {data.isGroup ? (
+                // If it's a group conversation, display the AvatarGroup with all users' avatars
+                <AvatarGroup users={data.users} />
+            ) : (
+                // If it's a one-on-one conversation, display the Avatar of the other user
+                <Avatar user={otherUser} />
+            )}
+            <div className="flex-1 min-w-0">
+                <div className="focus:outline-none">
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    <div className="flex items-center justify-between mb-1">
+                        {/* Display the name of the conversation or the other user */}
+                        <p className="font-medium text-gray-900 text-md">
+                            {data.name || otherUser.name}
+                        </p>
+                        {/* Display the time of the last message */}
+                        {lastMessage?.createdAt && (
+                            <p className="text-xs font-light text-gray-400">
+                                {format(new Date(lastMessage.createdAt), 'p')}
+                            </p>
+                        )}
+                    </div>
+                    {/* Display the last message text */}
+                    <p className={clsx(`
+                        truncate
+                        text-sm
+                        `,
+                        hasSeen ? 'text-gray-500' : 'text-black font-medium'
+                    )}>
+                        {lastMessageText}
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }
