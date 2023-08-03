@@ -35,11 +35,11 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
 
     return (
         <>
-            {/* <ProfileDrawer
+            <ProfileDrawer
                 data={conversation}
                 isOpen={drawerOpen}
                 onClose={() => setDrawerOpen(false)}
-            /> */}
+            />
             <div
                 className="
         bg-white 
