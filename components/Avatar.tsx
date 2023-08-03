@@ -28,16 +28,11 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
                 />
             </div>
             {/* Render an indicator if the user is active */}
-            {true ? (
+            {isActive ? (
                 <span
                     className="absolute top-0 right-0 block w-2 h-2 bg-green-500 rounded-full ring-2 ring-white md:h-3 md:w-3"
                 />
             ) : null}
-            {/* {isActive ? (
-                <span
-                    className="absolute top-0 right-0 block w-2 h-2 bg-green-500 rounded-full ring-2 ring-white md:h-3 md:w-3"
-                />
-            ) : null} */}
         </div>
     );
 }
