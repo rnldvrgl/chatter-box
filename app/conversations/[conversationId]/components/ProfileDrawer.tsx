@@ -7,6 +7,8 @@ import { useMemo, Fragment } from "react"
 import { Transition, Dialog } from "@headlessui/react"
 import { IoClose } from "react-icons/io5"
 
+import Avatar from "@/components/Avatar"
+
 
 interface ProfileDrawerProps {
     isOpen: boolean,
@@ -62,6 +64,16 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                         <span className="sr-only">Close panel</span>
                                                         <IoClose size={24} />
                                                     </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="relative flex-1 px-4 mt-6 sm:px-6">
+                                            <div className="flex flex-col items-center">
+                                                <div className="mb-2">
+                                                    <Avatar user={otherUser} />
+                                                </div>
+                                                <div>
+                                                    {title}
                                                 </div>
                                             </div>
                                         </div>
