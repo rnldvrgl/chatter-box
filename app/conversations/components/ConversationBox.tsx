@@ -27,6 +27,11 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         router.push(`/conversations/${data.id}`)
     }, [data.id, router]);
 
+    const lastMessage = useMemo(() => {
+        const messages = data.messages || [];
+        return messages[messages.length - 1];
+    }, [data.messages]);
+
     return (
         <div>
             ConversationBox
