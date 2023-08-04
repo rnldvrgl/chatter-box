@@ -62,8 +62,6 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
             .finally(() => setIsLoading(false));
     }
 
-    console.log({ users })
-
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <form onSubmit={handleSubmit(onSubmit)}>
