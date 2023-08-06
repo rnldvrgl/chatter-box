@@ -17,6 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    // Just a Comment added
     <html lang="en">
       <body className={inter.className}>
         <AuthContext>
