@@ -2,7 +2,7 @@ import getCurrentUser from "@/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 
 import prisma from "@/libs/prismadb";
-// import { pusherServer } from "@/libs/pusher";
+import { pusherServer } from "@/libs/pusher";
 
 interface IParams {
 	conversationId?: string;
@@ -42,15 +42,15 @@ export async function DELETE(
 			},
 		});
 
-		// existingConversation.users.forEach((user) => {
-		// 	if (user.email) {
-		// 		pusherServer.trigger(
-		// 			user.email,
-		// 			"conversation:remove",
-		// 			existingConversation
-		// 		);
-		// 	}
-		// });
+		existingConversation.users.forEach((user) => {
+			if (user.email) {
+				pusherServer.trigger(
+					user.email,
+					"conversation:remove",
+					existingConversation
+				);
+			}
+		});
 
 		return NextResponse.json(deletedConversation);
 	} catch (error) {
