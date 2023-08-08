@@ -87,7 +87,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                     <div className="flex items-center ml-3 h-7">
                                                         <button
                                                             type="button"
-                                                            className="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                            className="text-gray-400 bg-white rounded-md hover:text-ashGray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                                             onClick={onClose}
                                                         >
                                                             <span className="sr-only">Close panel</span>
@@ -104,7 +104,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                     <div>
                                                         {title}
                                                     </div>
-                                                    <div className="text-sm text-gray-500">
+                                                    <div className="text-sm text-ashGray-500">
                                                         {statusText}
                                                     </div>
                                                     <div className="flex gap-10 my-8">
@@ -122,7 +122,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                             {data.isGroup && (
                                                                 <div>
                                                                     <dt
-                                                                        className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
+                                                                        className="text-sm font-medium text-ashGray-500 sm:w-40 sm:flex-shrink-0"
                                                                     >
                                                                         Emails
                                                                     </dt>
@@ -136,7 +136,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                             {!data.isGroup && (
                                                                 <div>
                                                                     <dt
-                                                                        className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
+                                                                        className="text-sm font-medium text-ashGray-500 sm:w-40 sm:flex-shrink-0"
                                                                     >
                                                                         Email
                                                                     </dt>
@@ -152,7 +152,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                                     <hr />
                                                                     <div>
                                                                         <dt
-                                                                            className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
+                                                                            className="text-sm font-medium text-ashGray-500 sm:w-40 sm:flex-shrink-0"
                                                                         >
                                                                             Joined
                                                                         </dt>

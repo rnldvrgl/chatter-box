@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col justify-center min-h-full py-12 bg-gray-100 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Image alt="Logo" height={48} width={48} className="w-auto mx-auto" src="/images/logo.png" />
-        <h2 className="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">
+        <h2 className="mt-6 text-3xl font-bold tracking-tight text-center text-raisinBlack">
           Sign in to your account
         </h2>
       </div>

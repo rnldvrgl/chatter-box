@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                     leaveTo="opacity-0"
                 >
                     <div
-                        className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75 "
+                        className="fixed inset-0 transition-opacity bg-ashGray-500 bg-opacity-75 "
                     />
                 </Transition.Child>
 
@@ -49,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                                 >
                                     <button
                                         type="button"
-                                        className="text-gray-400 bg-white rounded-md  hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        className="text-gray-400 bg-white rounded-md  hover:text-ashGray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                         onClick={onClose}
                                     >
                                         <span className="sr-only">Close</span>
