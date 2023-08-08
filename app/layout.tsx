@@ -8,8 +8,8 @@ import ActiveStatus from '@/components/ActiveStatus'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Messenger Clone',
-  description: 'Messenger Clone',
+  title: 'Chatter Box',
+  description: 'Chatter Box',
 }
 
 export default function RootLayout({
