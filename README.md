@@ -14,7 +14,7 @@ Chatter Box is a real-time messenger clone that allows users to chat with each o
 
 ## Demo
 
-You can check out the live demo of Chatter Box [here]([https://chatter-box-two.vercel.app/]).
+You can check out the live demo of Chatter Box [https://chatter-box-two.vercel.app/].
 
 ## Technologies Used
 
